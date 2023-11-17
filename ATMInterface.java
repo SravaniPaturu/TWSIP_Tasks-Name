@@ -93,7 +93,7 @@ public class ATMInterface
                     }
                     else
                     {
-                         System.err.println("Invalid Account Number");
+                         System.out.println("Invalid Account Number");
                     }
                 }
                 break;
