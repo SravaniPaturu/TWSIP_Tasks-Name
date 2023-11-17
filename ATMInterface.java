@@ -34,7 +34,7 @@ public class ATMInterface
         int choice=sc.nextInt();
         switch(choice)
         {
-        case 1: System.out.print("Enter money to be deposited:");
+        case 1: System.out.print("Enter amount to be deposited:");
                 deposit_amount=sc.nextInt();
                 balance=balance+deposit_amount;
                 System.out.println(deposit_amount+"has been successfully deposited into Account Number"+AccountNum);
@@ -42,7 +42,7 @@ public class ATMInterface
                 break;
         
 
-        case 2: System.out.print("Enter money to be withdraw:");
+        case 2: System.out.print("Enter amount to be withdraw:");
                 withdraw_amount=sc.nextInt();
 
                 if(balance<=withdraw_amount)
@@ -56,10 +56,10 @@ public class ATMInterface
                     System.out.println("Your updated balance is:"+balance);
                 }
                 break;
-        case 3: System.out.println("Balance"+":"+balance);
+        case 3: System.out.println("Your current Balance is"+":"+balance);
                 break;
 
-        case 4: System.out.print("Enter money to be transfered:");
+        case 4: System.out.print("Enter amount to be transfered:");
                 transfer_amount=sc.nextInt();
                 
                 if(transfer_amount<balance)
