@@ -8,10 +8,12 @@ public class ATMInterface
 
         int balance=0,withdraw_amount,deposit_amount,transfer_amount;
 
+        //accN1&pin are user account &pin number,accN2 is account number to transfer fund
         String accN1="x1234",accN2="x3456",AccountNum1,AccountNum2,PinNum;
 
         String pin="5678";
 
+        //taking input from user
         Scanner sc=new Scanner(System.in);
 
         System.out.print("Enter your Account Number:");
@@ -20,6 +22,7 @@ public class ATMInterface
         System.out.print("Enetr your pin number:");
         PinNum=sc.nextLine();
 
+        //list data structure used to store account details
         ArrayList<String> l=new ArrayList<>();
 
         l.add("Account Number:"+accN1);
@@ -27,6 +30,7 @@ public class ATMInterface
 
         System.out.println("Account Details:"+l);
         
+        //checking whether entered details are correct or not
         if(AccountNum1.equals(accN1) && PinNum.equals(pin))
         {
         while(true)
@@ -40,6 +44,7 @@ public class ATMInterface
 
         switch(choice)
         {
+        //operation to deposit amount into account
         case 1: System.out.print("Enter amount to be deposited:");
                 deposit_amount=sc.nextInt();
 
@@ -50,7 +55,7 @@ public class ATMInterface
                 System.out.println("Your updated balance is:"+balance);
                 break;
         
-
+        //operation to withdraw amount from account
         case 2: System.out.print("Enter amount to be withdraw:");
                 withdraw_amount=sc.nextInt();
 
@@ -68,10 +73,12 @@ public class ATMInterface
                     System.out.println("Your updated balance is:"+balance);
                 }
                 break;
-
+        
+        //operation to check the balance in account
         case 3: System.out.println("Your current Balance is"+":"+balance);
                 break;
-
+        
+        //operation to transfer amount from one account to another account
         case 4: System.out.print("Enter Account Number for fund transfer:");
                 Scanner in=new Scanner(System.in);
                 AccountNum2=in.nextLine();
